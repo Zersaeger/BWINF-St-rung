@@ -1,0 +1,15 @@
+C:\Users\leona\OneDrive\Documents\Code\BWINF-Störung\bin\Debug\net7.0\BWINF-Störung.exe
+C:\Users\leona\OneDrive\Documents\Code\BWINF-Störung\bin\Debug\net7.0\BWINF-Störung.deps.json
+C:\Users\leona\OneDrive\Documents\Code\BWINF-Störung\bin\Debug\net7.0\BWINF-Störung.runtimeconfig.json
+C:\Users\leona\OneDrive\Documents\Code\BWINF-Störung\bin\Debug\net7.0\BWINF-Störung.dll
+C:\Users\leona\OneDrive\Documents\Code\BWINF-Störung\bin\Debug\net7.0\BWINF-Störung.pdb
+C:\Users\leona\OneDrive\Documents\Code\BWINF-Störung\obj\Debug\net7.0\BWINF-Störung.csproj.AssemblyReference.cache
+C:\Users\leona\OneDrive\Documents\Code\BWINF-Störung\obj\Debug\net7.0\BWINF-Störung.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\leona\OneDrive\Documents\Code\BWINF-Störung\obj\Debug\net7.0\BWINF-Störung.AssemblyInfoInputs.cache
+C:\Users\leona\OneDrive\Documents\Code\BWINF-Störung\obj\Debug\net7.0\BWINF-Störung.AssemblyInfo.cs
+C:\Users\leona\OneDrive\Documents\Code\BWINF-Störung\obj\Debug\net7.0\BWINF-Störung.csproj.CoreCompileInputs.cache
+C:\Users\leona\OneDrive\Documents\Code\BWINF-Störung\obj\Debug\net7.0\BWINF-Störung.dll
+C:\Users\leona\OneDrive\Documents\Code\BWINF-Störung\obj\Debug\net7.0\refint\BWINF-Störung.dll
+C:\Users\leona\OneDrive\Documents\Code\BWINF-Störung\obj\Debug\net7.0\BWINF-Störung.pdb
+C:\Users\leona\OneDrive\Documents\Code\BWINF-Störung\obj\Debug\net7.0\BWINF-Störung.genruntimeconfig.cache
+C:\Users\leona\OneDrive\Documents\Code\BWINF-Störung\obj\Debug\net7.0\ref\BWINF-Störung.dll
