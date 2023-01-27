@@ -27,7 +27,7 @@
         // select a sentence
         Console.Write("Auf welchen Satz möchtest Du überprüfen?: ");
         int x = Int32.Parse(Console.ReadLine()!) - 1;
-        FindSentece(sentences[x].Split(' '), cont);
+        FindPotentialSentece(sentences[x].Split(' '), cont);
     }
 
     static string[] MakeSentence(string[] allWords)
@@ -45,8 +45,9 @@
         }
         return allSentences.ToArray();
     }
-    static void FindSentece(string[] sentence, string[] allSentences)
+    static void FindPotentialSentece(string[] sentence, string[] allSentences)
     {
+        List<string> potentialSentences = new List<string>();
         HashSet<bool> wordIsInSentence = new HashSet<bool>();
         List<string> keys = new List<string>();
         for (int i = 0; i < sentence.Length; i++)
@@ -61,10 +62,6 @@
         {
             string pureSentences = RemoveDots(allSentences[i]);
             string[] wasnMüll = pureSentences.Split(' ');
-            /*if (wasnMüll.Contains("das") && wasnMüll.Contains("mir") && wasnMüll.Contains("vor"))
-            {
-                Console.WriteLine(pureSentences);
-            }*/
             int count = keys.Count;
             for (int j = 0; j < keys.Count; j++)
             {
@@ -78,12 +75,60 @@
                     wordIsInSentence.Add(false);
                 }
             }
-            if (!wordIsInSentence.Contains(false))
+            if (!wordIsInSentence.Contains(false) && wasnMüll.Length >= sentence.Length)
             {
-                Console.WriteLine(pureSentences);
+                potentialSentences.Add(pureSentences);
             }
             wordIsInSentence.Clear();
         }
+        FindSentence(potentialSentences, sentence);
+    }
+
+    static void FindSentence(List<string> potentialSentences, string[] sentence)
+    {
+        HashSet<bool> matches = new HashSet<bool>();
+        if (potentialSentences.Count == 1)
+        {
+            Console.WriteLine(potentialSentences[0]);
+            return;
+        }
+        for (int i = 0; i < potentialSentences.Count; i++)
+        {
+            string[] storage = new string[sentence.Length];
+            string[] x = potentialSentences[i].Split(' ');
+            int index = 0;
+            for (int j = 0; j < x.Length; j++)
+            {
+                if (x[j] == sentence[0])
+                {
+                    index = j;
+                    break;
+                }
+            }
+            int IndexForStorage = 0;
+            for (int j = index; j < index + storage.Length; j++)
+            {
+                storage[IndexForStorage] = x[j];
+                IndexForStorage++;
+            }
+            for (int j = 0; j < storage.Length; j++)
+            {
+                if (storage[j] == sentence[j] || sentence[j] == "_")
+                {
+                    matches.Add(true);
+                }
+                else
+                {
+                    matches.Add(false);
+                }
+            }
+            if (!matches.Contains(false))
+            {
+                Console.WriteLine(potentialSentences[i]);
+            }
+            matches.Clear();
+        }
+
     }
 
     static string RemoveDots(string sentence)
