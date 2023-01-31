@@ -65,15 +65,7 @@
             int count = keys.Count;
             for (int j = 0; j < keys.Count; j++)
             {
-                if (wasnMüll.Contains(keys[j]))
-                {
-                    wordIsInSentence.Add(true);
-                }
-                else
-                {
-                    j = keys.Count;
-                    wordIsInSentence.Add(false);
-                }
+                wordIsInSentence.Add(wasnMüll.Contains(keys[j]) ? true : false);
             }
             if (!wordIsInSentence.Contains(false) && wasnMüll.Length >= sentence.Length)
             {
@@ -113,14 +105,7 @@
             }
             for (int j = 0; j < storage.Length; j++)
             {
-                if (storage[j] == sentence[j] || sentence[j] == "_")
-                {
-                    matches.Add(true);
-                }
-                else
-                {
-                    matches.Add(false);
-                }
+                matches.Add((storage[j] == sentence[j] || sentence[j] == "_") ? true : false);
             }
             if (!matches.Contains(false))
             {
@@ -148,10 +133,7 @@
         System.Text.StringBuilder sb = new System.Text.StringBuilder();
         foreach (char c in s)
         {
-            if (Char.IsLetter(c) || Char.IsPunctuation(c))
-                sb.Append(c);
-            else
-                sb.Append('¥');
+            sb.Append((Char.IsLetter(c) || Char.IsPunctuation(c)) ? c : '¥');
         }
         return sb.ToString()!.Replace('!', '.').Replace('?', '.').Replace(';', '.').Replace(',', '.').Replace('»', '.').Replace('«', '.').Replace(':', '.');
     }
